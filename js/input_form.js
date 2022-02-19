@@ -23,3 +23,17 @@ text.addEventListener('input', function ()
       textError.textContent = "Name Is Incorrect!";
    }
 });
+
+//UC2:- As a User need to enter a valid email
+
+const emailInput = document.querySelector('#email');
+const emailError = document.querySelector('.email-error');
+emailInput.addEventListener('input', function () {
+   let emailRegex = RegExp('^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$');
+   if (emailRegex.test(emailInput.value)) {
+      emailError.textContent = "";
+   }
+   else {
+      emailError.textContent = " Invalid Email!"
+   }
+});
